@@ -1,0 +1,4 @@
+<li id="task_<%= task.id %>"> <!-- ID ที่ไม่ซ้ำกันสำหรับแต่ละ Task -->
+  <%= task.title %>
+  <%= link_to 'Mark as Complete', complete_task_path(task), method: :patch, data: { turbo_method: :patch } %>
+</li>

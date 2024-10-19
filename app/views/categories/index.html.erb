@@ -1,0 +1,21 @@
+<h1>Categories</h1>
+
+<%= turbo_frame_tag "new_category" do %>
+  <%= form_with(model: Category.new, local: false) do |form| %>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div>
+      <%= form.submit 'Create Category' %>
+    </div>
+  <% end %>
+<% end %>
+
+<h2>All Categories</h2>
+<ul id="categories"> <!-- ID for the categories list -->
+  <%= @categories.each do |category| %>
+    <%= render partial: 'categories/category', locals: { category: category } %>
+  <% end %>
+</ul>
